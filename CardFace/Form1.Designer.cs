@@ -41,7 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.value_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.generate_Pin_button = new System.Windows.Forms.Button();
             this.valide_button = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,7 +54,9 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.stat_toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.reponse_texBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.refresh_button = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.search_textBox = new System.Windows.Forms.TextBox();
             this.Identity.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupeBox3.SuspendLayout();
@@ -190,7 +192,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.value_dateTimePicker);
             this.groupBox1.Controls.Add(this.generate_Pin_button);
             this.groupBox1.Controls.Add(this.valide_button);
             this.groupBox1.Controls.Add(this.label7);
@@ -203,16 +205,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Security";
             // 
-            // dateTimePicker1
+            // value_dateTimePicker
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(257, 36);
-            this.dateTimePicker1.MinDate = new System.DateTime(2020, 11, 17, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(179, 30);
-            this.dateTimePicker1.TabIndex = 6;
-            this.dateTimePicker1.Value = new System.DateTime(2020, 11, 17, 10, 50, 14, 0);
+            this.value_dateTimePicker.CustomFormat = "";
+            this.value_dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.value_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.value_dateTimePicker.Location = new System.Drawing.Point(257, 36);
+            this.value_dateTimePicker.MinDate = new System.DateTime(2020, 11, 20, 0, 0, 0, 0);
+            this.value_dateTimePicker.Name = "value_dateTimePicker";
+            this.value_dateTimePicker.Size = new System.Drawing.Size(179, 30);
+            this.value_dateTimePicker.TabIndex = 6;
+            this.value_dateTimePicker.Value = new System.DateTime(2020, 11, 20, 0, 0, 0, 0);
             // 
             // generate_Pin_button
             // 
@@ -266,7 +269,7 @@
             // groupeBox3
             // 
             this.groupeBox3.Controls.Add(this.data_listBox);
-            this.groupeBox3.Location = new System.Drawing.Point(551, 136);
+            this.groupeBox3.Location = new System.Drawing.Point(551, 188);
             this.groupeBox3.Name = "groupeBox3";
             this.groupeBox3.Size = new System.Drawing.Size(463, 554);
             this.groupeBox3.TabIndex = 5;
@@ -285,6 +288,7 @@
             this.data_listBox.ScrollAlwaysVisible = true;
             this.data_listBox.Size = new System.Drawing.Size(451, 510);
             this.data_listBox.TabIndex = 0;
+            this.data_listBox.SelectedIndexChanged += new System.EventHandler(this.data_listBox_SelectedIndexChanged);
             // 
             // import_file_textBox
             // 
@@ -312,7 +316,7 @@
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stat_toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 705);
+            this.statusStrip.Location = new System.Drawing.Point(0, 745);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.statusStrip.Size = new System.Drawing.Size(1048, 30);
@@ -332,25 +336,46 @@
             this.reponse_texBox.Multiline = true;
             this.reponse_texBox.Name = "reponse_texBox";
             this.reponse_texBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.reponse_texBox.Size = new System.Drawing.Size(508, 127);
+            this.reponse_texBox.Size = new System.Drawing.Size(508, 167);
             this.reponse_texBox.TabIndex = 9;
             // 
-            // button1
+            // refresh_button
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(607, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 44);
-            this.button1.TabIndex = 10;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.refresh_button.Image = ((System.Drawing.Image)(resources.GetObject("refresh_button.Image")));
+            this.refresh_button.Location = new System.Drawing.Point(607, 0);
+            this.refresh_button.Name = "refresh_button";
+            this.refresh_button.Size = new System.Drawing.Size(50, 44);
+            this.refresh_button.TabIndex = 10;
+            this.refresh_button.UseVisualStyleBackColor = true;
+            this.refresh_button.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(552, 151);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(112, 25);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Recherche:";
+            // 
+            // search_textBox
+            // 
+            this.search_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_textBox.Location = new System.Drawing.Point(670, 150);
+            this.search_textBox.Multiline = true;
+            this.search_textBox.Name = "search_textBox";
+            this.search_textBox.Size = new System.Drawing.Size(338, 30);
+            this.search_textBox.TabIndex = 11;
             // 
             // Card_Face
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1048, 735);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1048, 775);
+            this.Controls.Add(this.search_textBox);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.refresh_button);
             this.Controls.Add(this.reponse_texBox);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.import_button);
@@ -398,11 +423,13 @@
         private System.Windows.Forms.Button generate_Pin_button;
         private System.Windows.Forms.TextBox import_file_textBox;
         private System.Windows.Forms.Button import_button;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker value_dateTimePicker;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel stat_toolStripStatusLabel;
         private System.Windows.Forms.ListBox data_listBox;
         private System.Windows.Forms.TextBox reponse_texBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button refresh_button;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox search_textBox;
     }
 }
