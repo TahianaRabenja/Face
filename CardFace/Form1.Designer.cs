@@ -226,7 +226,6 @@
             this.generate_Pin_button.TabIndex = 3;
             this.generate_Pin_button.Text = "Générer";
             this.generate_Pin_button.UseVisualStyleBackColor = true;
-            this.generate_Pin_button.Click += new System.EventHandler(this.generate_Pin_button_Click);
             // 
             // valide_button
             // 
@@ -237,7 +236,6 @@
             this.valide_button.TabIndex = 3;
             this.valide_button.Text = "Valider";
             this.valide_button.UseVisualStyleBackColor = true;
-            this.valide_button.Click += new System.EventHandler(this.valide_button_Click);
             // 
             // label7
             // 
@@ -318,10 +316,10 @@
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stat_toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 744);
+            this.statusStrip.Location = new System.Drawing.Point(0, 745);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip.Size = new System.Drawing.Size(1048, 31);
+            this.statusStrip.Size = new System.Drawing.Size(1048, 30);
             this.statusStrip.TabIndex = 8;
             this.statusStrip.Text = "ETO MAHITA IZY";
             // 

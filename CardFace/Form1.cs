@@ -371,27 +371,5 @@ namespace CardFace
 
             MessageBox.Show(sName + slast_Name);
         }
-
-        private void generate_Pin_button_Click(object sender, EventArgs e)
-        {
-            var pinValue = new Random().Next(0, 9999);
-            var showPin = pinValue.ToString().PadLeft(4, '0');
-            pin_textBox.Text = showPin;
-
-            PINbytes = new byte[4];
-
-            for (int i = 3; i >= 0; i--)
-            {
-                PINbytes[i] = (byte)(pinValue % 10);
-                pinValue = pinValue / 10;
-            }
-        }
-
-        private void valide_button_Click(object sender, EventArgs e)
-        {
-            apdu = new CommandAPDU(0x10, 0x24, 0x00, 0x83, 0x04, PINbytes);
-            resAPDU = Reader.Transmit(apdu);
-            testBox.Text = resAPDU.SW1SW2;
-        }
     }
 }
